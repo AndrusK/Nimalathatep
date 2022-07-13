@@ -191,6 +191,9 @@ proc main() =
             except:
                 echo "An error occurred when generating payload.\nPlease read help doc below\n"
                 printHelp(true)
+        else:
+            echo "The selected payload/extention are likely not compatible. Please check 'payloads.json'\n"
+            quit 1
     else:
         file_path = payloadData["methods"][apiMethod]["filepaths"]["standard"].getStr()
         if file_path != "":
@@ -204,6 +207,9 @@ proc main() =
             except:
                 echo "An error occurred when generating payload.\nPlease read help doc below\n"
                 printHelp(true)
+        else:
+            echo "The selected payload/extention are likely not compatible. Please check 'payloads.json'\n"
+            quit 1
 
     postPayloadGen(file_path, encodedCrypted, newpassword)
 main()
