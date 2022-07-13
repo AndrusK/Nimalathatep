@@ -122,7 +122,7 @@ proc main() =
         echo "No args provided.\nSee usage below:\n"
         printHelp(true)
     elif argc != 3:
-        echo "No args provided"
+        echo "Too many or too few arguments provided\n\n"
         printHelp(true)
 
     case argv[0]:
